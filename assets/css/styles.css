@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgba(107, 98, 86, 0.856);
+    background-color: rgb(0, 22, 31);
 }
 
 .d-flex {
@@ -10,5 +10,5 @@ body {
 .grid-block {
     width: 1rem;
     height: 1rem;
-    border: .5px rgba(221, 221, 221, 0.096) solid;
+    border: .5px rgba(221, 221, 221, 0.068) solid;
 }

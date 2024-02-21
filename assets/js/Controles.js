@@ -2,12 +2,13 @@
 // Coordenadas Primer player
 var x = 1;
 var y = 1;
-//Limite del tablero
-var x2 = 40;
-var y2 = 40;
+//Recuperar variables (tamaño del tablero)
+var x2 = localStorage.getItem('x2');
+var y2 = localStorage.getItem('y2')
+
 // Coordenadas Segundo player
-var xP2 = 40;
-var yP2 = 40;
+var xP2 = (x2);
+var yP2 = (y2);
 
 // Player 1
 var id_bloque = x + "," + y;
@@ -39,16 +40,16 @@ const manejarTeclaPresionada = (event) => {
 
             var color_bloque = document.getElementById(id_bloque_right)
             var color_right = color_bloque.style.background;
-            if (color_right === "orange" || color_right === "purple"){ 
+            if (color_right === "orange" || color_right === "purple" || color_right === "blue"){ 
                 // No hagas nada si el color es orange o purple   
             }else {
                 var color_bloque = document.getElementById(id_bloque);
                 color_bloque.style.background = "orange";
-                if (x <=40) {
+                if (x <=x2) {
                     //Incrementar x en 1
                     x = x + 1;
                         //Reducir el x cuando sea mayor a 40
-                        if (x >=41){
+                        if (x > x2){
                             x =1
                         }            
                     //Actualizar el id del bloque
@@ -65,11 +66,11 @@ const manejarTeclaPresionada = (event) => {
         if (x > 1) {
             var id_bloque_left = (x - 1) + "," + y;
         } else {
-            var id_bloque_left = "40," + y;
+            var id_bloque_left = x2+ "," + y;
         }
         var color_bloque = document.getElementById(id_bloque_left);
         var color_left = color_bloque.style.background;
-        if (color_left === "orange" || color_left === "purple"){ 
+        if (color_left === "orange" || color_left === "purple" || color_left === "blue"){ 
             // No hagas nada si el color es orange o purple   
             } else {
                 var color_bloque_actual = document.getElementById(id_bloque);
@@ -78,7 +79,7 @@ const manejarTeclaPresionada = (event) => {
                     // Decrementar x en 1
                     x = x - 1;
                 } else {
-                    x = 40;
+                    x = x2;
                 }
                 // Actualizar el id del bloque
                 id_bloque = x + "," + y;
@@ -97,7 +98,7 @@ const manejarTeclaPresionada = (event) => {
         }
         var color_bloque = document.getElementById(id_bloque_down);
         var color_down = color_bloque.style.background;
-        if (color_down === "orange" || color_down === "purple") { 
+        if (color_down === "orange" || color_down === "purple" || color_down === "blue") { 
             // No hagas nada si el color es orange o purple  
         } else {
             var color_bloque_actual = document.getElementById(id_bloque);
@@ -121,11 +122,11 @@ const manejarTeclaPresionada = (event) => {
         if (y > 1) {
             var id_bloque_up = x + "," + (y - 1);
         } else {
-            var id_bloque_up = x + ",40";
+            var id_bloque_up = x + "," + y2;
         }
         var color_bloque = document.getElementById(id_bloque_up);
         var color_up = color_bloque.style.background;
-        if (color_up === "orange" || color_up === "purple") { 
+        if (color_up === "orange" || color_up === "purple" || color_up === "blue") { 
             // No hagas nada si el color es orange o purple  
         } else {
             var color_bloque_actual = document.getElementById(id_bloque);
@@ -160,7 +161,7 @@ const manejarTeclaPresionada = (event) => {
     
             var color_bloqueP2 = document.getElementById(id_bloque_rightP2);
             var color_rightP2 = color_bloqueP2.style.background;
-            if (color_rightP2 === "orange" || color_rightP2 === "purple"){ 
+            if (color_rightP2 === "orange" || color_rightP2 === "purple" || color_rightP2 === "red"){ 
                 // No hagas nada si el color es orange o purple 
             } else {
                 var color_bloque_actualP2 = document.getElementById(id_bloqueP2);
@@ -191,7 +192,7 @@ const manejarTeclaPresionada = (event) => {
     
             var color_bloqueP2 = document.getElementById(id_bloque_upP2);
             var color_upP2 = color_bloqueP2.style.background;
-            if (color_upP2 === "orange" || color_upP2 === "purple"){ 
+            if (color_upP2 === "orange" || color_upP2 === "purple" || color_upP2 === "red"){ 
                 // No hagas nada si el color es orange o purple 
             } else {
                 var color_bloque_actualP2 = document.getElementById(id_bloqueP2);
@@ -220,7 +221,7 @@ const manejarTeclaPresionada = (event) => {
         
             var color_bloqueP2 = document.getElementById(id_bloque_downP2);
             var color_downP2 = color_bloqueP2.style.background;
-            if (color_downP2 === "orange" || color_downP2 === "purple"){ 
+            if (color_downP2 === "orange" || color_downP2 === "purple" || color_downP2 === "red"){ 
                 // No hagas nada si el color es orange o purple 
             } else {
                 var color_bloque_actualP2 = document.getElementById(id_bloqueP2);
@@ -249,7 +250,7 @@ const manejarTeclaPresionada = (event) => {
         
             var color_bloqueP2 = document.getElementById(id_bloque_leftP2);
             var color_leftP2 = color_bloqueP2.style.background;
-            if (color_leftP2 === "orange" || color_leftP2 === "purple"){ 
+            if (color_leftP2 === "orange" || color_leftP2 === "purple" || color_leftP2 === "red"){ 
                 // No hagas nada si el color es orange o purple 
             } else {
                 var color_bloque_actualP2 = document.getElementById(id_bloqueP2);

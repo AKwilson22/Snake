@@ -7,10 +7,17 @@ var grid_gens = []; // Arreglo para almacenar el contenido generado
 
 grilla.forEach(function(grilla) {
     var x = 1;
-    var x2 = 40;
+    //Definir hancho de la grilla
+    var x2 = prompt("cuanto de hancho quiere el tablero");
     var y = 1;
-    var y2 = 40;
+    //Definir alto de la grilla
+    var y2 = prompt("cuanto de alto quiere el tablero");
     var grid_gen = '';
+
+    //Guardar las dimenciones del tablero en el almacenamiento local
+    localStorage.setItem('x2', x2);
+    localStorage.setItem('y2', y2);
+
 
     while (y <= y2) {
         while (x <= x2) {
@@ -31,6 +38,3 @@ var container = document.getElementById("container-grid");
 grid_gens.forEach(function(grid) {
     container.innerHTML += grid; // Agregar contenido HTML al contenedor
 });
-
-
-
